@@ -1,5 +1,5 @@
 import React from 'react';
-import ShowApiData1 from './ShowApiData';
+import ShowApiData from './ShowApiData';
 
 const ApiExample = () => {
   const [users, setUsers] = React.useState([]);
@@ -18,7 +18,7 @@ const ApiExample = () => {
   return (
     <div>
       <h2>User Data</h2>
-      <ShowApiData1 users={users} />
+      <ShowApiData users={users} />
     </div>
   );
 };

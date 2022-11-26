@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ShowApiData1 = (props) => {
+const ShowApiData = (props) => {
   return (
     <div>
       {props.users.map((data, i) => {
@@ -14,4 +14,4 @@ const ShowApiData1 = (props) => {
     </div>
   );
 };
-export default ShowApiData1;
+export default ShowApiData;
