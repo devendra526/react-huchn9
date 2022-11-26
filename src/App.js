@@ -15,8 +15,8 @@ export default function App() {
   const changeColor = () => {
      setColor((color)=>"red")
   }
-  const getDay = () => {
-      setDay((day)=>"Sunday")
+  const getDay = (day) => {
+      setDay(day)
   }
   return (
     <div>
