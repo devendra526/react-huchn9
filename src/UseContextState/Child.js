@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import SuperChild from './UseContext/SuperChild';
+import SuperChild from './UseContextState/SuperChild';
 import { GlobalData } from './App';
 
 const Child = () => {

@@ -4,7 +4,7 @@ import UseEffectExample from './UseEffectExample';
 import ApiExample from './ApiExample';
 import Color from './Color';
 import Demo from './Demo';
-import Child from './UseContext/Child';
+import Child from './UseContextState/Child';
 import Other from './OtherChild';
 
 export const GlobalData = createContext();
