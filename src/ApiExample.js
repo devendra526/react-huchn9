@@ -1,31 +1,24 @@
 import React from 'react';
+import ShowApiData1 from './ShowApiData';
 
 const ApiExample = () => {
   const [users, setUsers] = React.useState([]);
 
-  React.useEffect(() => {
-    fetch('https://reqres.in/api/users?page=2')
+  const getUsers = () => {
+    let url = 'https://reqres.in/api/users?page=2';
+    fetch(url)
       .then((resp) => resp.json())
       .then((resp) => setUsers(resp.data));
+  };
+
+  React.useEffect(() => {
+    getUsers();
   });
 
   return (
     <div>
-      <table border="1">
-        <tr>
-          <th colspan="3">User Data</th>
-        </tr>
-        {users.map((user, i) => {
-          return (
-            <div>
-              <tr>
-                <td>{user.first_name} {user.last_name}</td>
-                <td>{user.email}</td>
-              </tr>
-            </div>
-          );
-        })}
-      </table>
+      <h2>User Data</h2>
+      <ShowApiData1 users={users} />
     </div>
   );
 };
