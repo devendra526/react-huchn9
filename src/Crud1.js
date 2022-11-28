@@ -1,0 +1,46 @@
+import React, { useState } from 'react';
+function CRUD() {
+  const [name, setName] = useState('');
+  const [allData, setAllData] = useState([]);
+  const [show, setShow] = useState(false);
+  const [editIndex, setEditIndex] = useState();
+
+  const handleAdd = () => {
+    if (name.length !== 0) {
+      setAllData((newData) => [...newData, name]);
+      setName('');
+    }
+  };
+
+  const handleDelete = (index) => {
+    allData.splice(index, 1);
+    setAllData([...allData]);
+  };
+
+  const handleEdit = (i) => {
+    setName(allData[i]);
+    setShow(true);
+    setEditIndex(i);
+  };
+  const handleUpdate = () => {
+    allData.splice(editIndex, 1, name);
+    setAllData([...allData]);
+    setShow(false);
+    setName('');
+  };
+
+  return (
+    <div>
+      <h1>CRUD Insert, Update and Delete</h1>
+      <input value={name} onChange={(e) => setName(e.target.value)} />
+      <button onClick={handleAdd}>Add</button>
+
+      {allData.map((val, i) => (
+        <div>
+          <h1>{val}</h1>
+        </div>
+      ))}
+    </div>
+  );
+}
+export default CRUD;

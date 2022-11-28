@@ -6,6 +6,7 @@ import Color from './Color';
 import Demo from './Demo';
 import Child from './Child';
 import Other from './OtherChild';
+import IncrDecr from './IncrDecr';
 
 export const GlobalData = createContext();
 
@@ -20,13 +21,14 @@ export default function App() {
   }
   return (
     <div>
-      <GlobalData.Provider value={{ textColor: color, getDay:getDay }}>
+      <IncrDecr/>
+      {/*<GlobalData.Provider value={{ textColor: color, getDay:getDay }}>
         <h2>This is App Component </h2>
         <h2>Today is {day} </h2>
         <Child />
         <Other />
         <button onClick={changeColor}>Change Color</button>
-      </GlobalData.Provider>
+  </GlobalData.Provider>*/}
     </div>
   );
 }
